@@ -160,15 +160,17 @@ use Paymentsds\MPesa\Client;
 $client = new Client([
    'apiKey' => '<REPLACE>',             // API Key
    'publicKey' => '<REPLACE>',          // Public Key
-   'serviceProviderCode' => '<REPLACE>', // Service Provider Code
-   'initiatorIdentifier' => '<REPLACE>', // Initiator Identifier
-   'securityIdentifier' => '<REPLACE>'  // Security Credential
+   
+
 ]);
 
 $paymentData = [
+   'to'=> '<REPLACE>',          // Service Provider Code
    'reference' => '11114',      // Third Party Reference
    'transaction' => 'T12344CC', // Transaction Reference
    'amount' => '10'             // Amount
+   'initiatorIdentifier' => "<REPLACE>", // Initiator Identifier
+   'securityIdentifier' => "<REPLACE>"  // Security Credential
 ];
 
 $result = $client->revert($paymentData);
